@@ -10,7 +10,8 @@ app.listen(app.get("port"), function(){
     console.log("Listening on port: ", app.get("port"));
 });
 
+app.use( express.static('public') );
+
 app.get( '/', function( req, res ){
-  console.log( 'Home, sweet home' );
-  res.sendFile( path.resolve( 'public/views/index.html' ) );
+  res.sendFile(path.resolve('public/views/index.html'));
 }); // end base url
